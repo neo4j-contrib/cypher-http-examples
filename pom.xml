@@ -71,6 +71,13 @@
           <artifactId>org.restlet</artifactId>
           <version>2.1.2</version>
       </dependency>
+
+      <!-- resteasy -->
+      <dependency>
+          <groupId>org.jboss.resteasy</groupId>
+          <artifactId>resteasy-client</artifactId>
+          <version>3.0.1.Final</version>
+      </dependency>
   </dependencies>
 
   <build>
@@ -94,6 +101,10 @@
           <id>maven-restlet</id>
           <name>Public online Restlet repository</name>
           <url>http://maven.restlet.org</url>
+      </repository>
+      <repository>
+          <id>resteasy</id>
+          <url>http://repository.jboss.org/maven2</url>
       </repository>
   </repositories>
 </project>

@@ -27,7 +27,9 @@ public interface ExecutionResult extends Iterable<List<Object>> {
 
 A `Util` class takes care of URL handling, JSON conversion and postData and `ExecutionResult` instantiation.
 
-## Jersey 
+## Jersey
+
+See: http://jersey.java.net/nonav/documentation/latest/user-guide.html#client
 
 Uses `Client, WebResource and ClientResponse` to access the Cypher endpoint.
 
@@ -38,3 +40,19 @@ Uses `Client, WebResource and ClientResponse` to access the Cypher endpoint.
           <version>1.9</version>
       </dependency>
 ````
+
+## JavaLite
+
+See: http://igorpolevoy.blogspot.de/2011/01/java-rest-with-ease.html http://javalt.org/
+
+## Restlet
+
+See: http://restlet.org/
+
+## RestEasy
+
+See: http://docs.jboss.org/resteasy/docs/3.0.2.Final/userguide/html/RESTEasy_Client_Framework.html
+
+## HttpClient
+
+## RestAssured
