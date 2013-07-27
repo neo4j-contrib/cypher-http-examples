@@ -50,7 +50,8 @@ public class CypherClientTest {
 
     enum Clients {
         JERSEY() { public CypherClient create(String url) { return new JerseyClient(url); } },
-        JAVA_LITE() { public CypherClient create(String url) { return new JavaLiteCypherClient(url); } };
+        JAVA_LITE() { public CypherClient create(String url) { return new JavaLiteCypherClient(url); } },
+        RESTLET() { public CypherClient create(String url) { return new RestletClient(url); } };
 
 
         public abstract CypherClient create(String url);
@@ -58,7 +59,7 @@ public class CypherClientTest {
 
     @Parameterized.Parameters(name = "Client: {0}")
     public static Iterable<Object[]> parameters() {
-        return Arrays.asList(new Object[][]{{Clients.JERSEY}, {Clients.JAVA_LITE}});
+        return Arrays.asList(new Object[][]{{Clients.JERSEY}, {Clients.JAVA_LITE}, {Clients.RESTLET}});
     }
 
     @Test

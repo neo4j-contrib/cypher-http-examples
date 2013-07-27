@@ -60,6 +60,17 @@
           <artifactId>javalite-common</artifactId>
           <version>1.4.8</version>
       </dependency>
+      <!-- Restlet (JSE Java Standard Edition, Engine java.net ) -->
+      <dependency>
+          <groupId>org.restlet.jse</groupId>
+          <artifactId>org.restlet.ext.net</artifactId>
+          <version>2.1.2</version>
+      </dependency>
+      <dependency>
+          <groupId>org.restlet.jse</groupId>
+          <artifactId>org.restlet</artifactId>
+          <version>2.1.2</version>
+      </dependency>
   </dependencies>
 
   <build>
@@ -78,6 +89,11 @@
           <name>Java.net Repository for Maven</name>
           <url>https://maven.java.net/content/repositories/releases/</url>
           <layout>default</layout>
+      </repository>
+      <repository>
+          <id>maven-restlet</id>
+          <name>Public online Restlet repository</name>
+          <url>http://maven.restlet.org</url>
       </repository>
   </repositories>
 </project>
