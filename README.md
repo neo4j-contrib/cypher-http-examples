@@ -29,7 +29,7 @@ public interface ExecutionResult extends Iterable<List<Object>> {
 
 A `Util` class takes care of URL handling, JSON conversion and postData and `ExecutionResult` instantiation.
 
-## Jersey
+## [Jersey Client](https://github.com/jexp/cypher-http-examples/blob/master/src/main/java/org/neo4j/example/rest/JerseyClient.java)
 
 See: http://jersey.java.net/nonav/documentation/latest/user-guide.html#client
 
@@ -43,15 +43,15 @@ Uses `Client, WebResource and ClientResponse` to access the Cypher endpoint.
       </dependency>
 ````
 
-## JavaLite
+## [JavaLite](https://github.com/jexp/cypher-http-examples/blob/master/src/main/java/org/neo4j/example/rest/JavaLiteCypherClient.java)
 
 See: http://igorpolevoy.blogspot.de/2011/01/java-rest-with-ease.html http://javalt.org/
 
-## Restlet
+## [Restlet](https://github.com/jexp/cypher-http-examples/blob/master/src/main/java/org/neo4j/example/rest/RestletClient.java)
 
 See: http://restlet.org/
 
-## RestEasy
+## [RestEasy](https://github.com/jexp/cypher-http-examples/blob/master/src/main/java/org/neo4j/example/rest/RestEasyClient.java)
 
 See: http://docs.jboss.org/resteasy/docs/3.0.2.Final/userguide/html/RESTEasy_Client_Framework.html
 
