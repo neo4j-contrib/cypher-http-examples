@@ -3,9 +3,12 @@ package org.neo4j.example.rest;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
 import org.neo4j.graphdb.GraphDatabaseService;
 import org.neo4j.graphdb.Transaction;
 
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.Map;
@@ -13,10 +16,12 @@ import java.util.Map;
 import static java.util.Arrays.asList;
 import static org.junit.Assert.assertEquals;
 
-public class JerseyClientTest {
+@RunWith(Parameterized.class)
+public class CypherClientTest {
 
     private static int NODE_ID;
     private static LocalTestServer server;
+    private final CypherClient client;
 
     @BeforeClass
     public static void beforeClass() {
@@ -39,9 +44,26 @@ public class JerseyClientTest {
         server.stop();
     }
 
+    public CypherClientTest(Clients clients) {
+        client = clients.create(server.getBaseUrl());
+    }
+
+    enum Clients {
+        JERSEY() {
+            @Override
+            public CypherClient create(String url) { return new JerseyClient(url); }
+        };
+
+        public abstract CypherClient create(String url);
+    }
+
+    @Parameterized.Parameters(name = "Client: {0}")
+    public static Iterable<Object[]> parameters() {
+        return Arrays.<Object[]>asList(new Object[]{Clients.JERSEY});
+    }
+
     @Test
     public void testQuery() throws Exception {
-        JerseyClient client = new JerseyClient(server.getBaseUrl());
         ExecutionResult result = client.query("start n=node({id}) return id(n) as id", Collections.<String, Object>singletonMap("id", NODE_ID));
 
         assertEquals(asList("id"),result.getColumns());
