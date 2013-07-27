@@ -15,7 +15,7 @@ public interface CypherClient {
 
 `ExecutionResult` is an interface with methods: 
 
-````
+````java
 public interface ExecutionResult extends Iterable<List<Object>> {
     List<String> getColumns();
 
