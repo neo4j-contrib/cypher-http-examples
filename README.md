@@ -2,6 +2,8 @@
 
 Examples on how to connect to the Cypher endpoints from Java with different http libraries
 
+**Contributions and Feedback wanted!!!**
+
 ## Infrastructure
 
 
@@ -56,3 +58,11 @@ See: http://docs.jboss.org/resteasy/docs/3.0.2.Final/userguide/html/RESTEasy_Cli
 ## HttpClient
 
 ## RestAssured
+
+
+# Todo
+
+* Auth
+* Neo4j 2.0 transactional Cypher endpoint examples (including transactions, rollback, batching and streaming)
+* Streaming JSON back and forth
+* .. more client libraries ..
