@@ -37,10 +37,10 @@ public class Util {
     }
 
     @SuppressWarnings("unchecked")
-    public static CypherClient.ExecutionResult toResult(int status, String resultString) {
+    public static ExecutionResult toResult(int status, String resultString) {
         if (status != 200) throw new IllegalStateException("Response status " + status + "\n" + resultString);
         Map map = toMap(resultString);
-        CypherClient.ExecutionResult result = new CypherClient.ExecutionResult((List<String>) map.get("columns"));
+        ExecutionResultImpl result = new ExecutionResultImpl((List<String>) map.get("columns"));
         result.addRows((List<List<Object>>) map.get("data"));
         return result;
     }

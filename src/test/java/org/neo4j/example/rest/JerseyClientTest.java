@@ -16,7 +16,7 @@ public class JerseyClientTest {
     @Test
     public void testQuery() throws Exception {
         JerseyClient client = new JerseyClient("http://localhost:7474/");
-        CypherClient.ExecutionResult result = client.query("start n=node({id}) return id(n) as id", Collections.<String, Object>singletonMap("id", ID));
+        ExecutionResult result = client.query("start n=node({id}) return id(n) as id", Collections.<String, Object>singletonMap("id", ID));
 
         assertEquals(asList("id"),result.getColumns());
 
