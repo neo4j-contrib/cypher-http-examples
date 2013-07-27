@@ -1,8 +1,8 @@
-! cypher-http-examples
+# cypher-http-examples
 
 Examples on how to connect to the Cypher endpoints from Java with different http libraries
 
-!! Infrastructure
+## Infrastructure
 
 
 There is a `CypherClient` interface with different implementations for different http libraries.
@@ -27,7 +27,7 @@ public interface ExecutionResult extends Iterable<List<Object>> {
 
 A `Util` class takes care of URL handling, JSON conversion and postData and `ExecutionResult` instantiation.
 
-!! Jersey 
+## Jersey 
 
 Uses `Client, WebResource and ClientResponse` to access the Cypher endpoint.
 
