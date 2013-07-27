@@ -22,6 +22,7 @@ public class JerseyClient implements CypherClient {
         ClientResponse response =
                 resource.accept(MediaType.APPLICATION_JSON_TYPE)
                         .type(MediaType.APPLICATION_JSON_TYPE)
+                        .header("X-Stream","true")
                         .post(ClientResponse.class, json);
         String result = response.getEntity(String.class);
         response.close();

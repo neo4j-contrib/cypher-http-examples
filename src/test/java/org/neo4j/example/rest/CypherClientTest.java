@@ -49,17 +49,16 @@ public class CypherClientTest {
     }
 
     enum Clients {
-        JERSEY() {
-            @Override
-            public CypherClient create(String url) { return new JerseyClient(url); }
-        };
+        JERSEY() { public CypherClient create(String url) { return new JerseyClient(url); } },
+        JAVA_LITE() { public CypherClient create(String url) { return new JavaLiteCypherClient(url); } };
+
 
         public abstract CypherClient create(String url);
     }
 
     @Parameterized.Parameters(name = "Client: {0}")
     public static Iterable<Object[]> parameters() {
-        return Arrays.<Object[]>asList(new Object[]{Clients.JERSEY});
+        return Arrays.asList(new Object[][]{{Clients.JERSEY}, {Clients.JAVA_LITE}});
     }
 
     @Test
