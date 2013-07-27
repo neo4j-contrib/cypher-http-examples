@@ -1,0 +1,14 @@
+*~
+_site/
+.DS_Store
+*.pgv.svg
+target/
+.idea
+.sonar
+*.iml
+.project
+.classpath
+.settings
+lib
+out
+.repo
